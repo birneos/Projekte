@@ -38,21 +38,32 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
-
+/*
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', '173.212.228.65'),
+            'port' => env('DB_PORT', '33060'),
+            'database' => env('DB_DATABASE', 'LANGULAR'),
+            'username' => env('DB_USERNAME', 'develop'),
+            'password' => env('DB_PASSWORD', '.legano-78ml'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-        ],
+        ],*/
+        'mysql' => [
+        'driver'    => 'mysql',
+        'host'      => '173.212.228.65',
+        'database'  => 'LANGULAR',
+        'username'  => 'develop',
+        'password'  => '.legano-78ml',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+        'strict'    => false,
+    ],
 
         'pgsql' => [
             'driver' => 'pgsql',

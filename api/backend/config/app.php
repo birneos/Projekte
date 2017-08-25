@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'de',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,28 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+        * Collective Forms&HTML, CSRF Protection
+        */
+
+        Collective\Html\HtmlServiceProvider::class,
+
+        /**
+        * LanguageService 
+        * https://github.com/ARCANEDEV/LaravelLang/
+        */
+        Arcanedev\LaravelLang\LaravelLangServiceProvider::class,
+
+        /**
+        * Laravel Debugbar installed
+        */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+
+        /**
+        * JWT AUTH
+        */
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
     ],
 
     /*
@@ -225,7 +247,13 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+         /* added Form, Html*/
+         'Form' => Collective\Html\FormFacade::class,
+         'Html' => Collective\Html\HtmlFacade::class,
+      
+        /* JWT Auth*/
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
     ],
 
 ];
