@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Image } from '../../models/image';
 import {ImageService} from '../../services/image.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-image-list',
@@ -11,7 +12,9 @@ import {ImageService} from '../../services/image.service';
 
 export class ImageListComponent implements OnInit {
 
-  images: Image[]=[];
+  //images: Image[]=[];
+  images: Observable<Image[]>;
+
   selectedImaage: Image;
   @Output() selectedEvent: EventEmitter<Image> = new EventEmitter<Image>();
 

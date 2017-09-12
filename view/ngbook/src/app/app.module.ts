@@ -1,5 +1,9 @@
-  import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+import { AuthModule } from './modules/auth.module';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
@@ -10,9 +14,23 @@ import {ImageService} from './services/image.service';
 import { ImageDetailComponent } from './gallery/image-detail/image-detail.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+
 import {routes} from './app.routes';
+import { AdminComponent } from './admin/admin.component';
+import { AdminImageListComponent } from './admin/admin-image-list/admin-image-list.component';
+import { DashboardComponent } from './admin/dashboard.component';
+import { AdminImageCreateComponent } from './admin/admin-image-create/admin-image-create.component';
+import { AdminImageEditComponent } from './admin/admin-image-edit/admin-image-edit.component';
+import { AdminImageDeleteComponent } from './admin/admin-image-delete/admin-image-delete.component';
+import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-create.component';
+import { UserService } from './services/user.service';
+import { AdminUserListComponent } from './admin/admin-user-list/admin-user-list.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { LogoutComponent } from './logout/logout.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 
 @NgModule({
@@ -21,14 +39,34 @@ import {routes} from './app.routes';
     NavbarComponent,
     GalleryComponent,
     ImageListComponent,
-    ImageComponent, 
-    ImageDetailComponent, ContactComponent, AboutComponent
+    ImageComponent,
+    ImageDetailComponent,
+    ContactComponent,
+    AboutComponent,
+    AdminComponent,
+    AdminImageListComponent,
+    DashboardComponent,
+    AdminImageCreateComponent,
+    AdminImageEditComponent,
+    AdminImageDeleteComponent,
+    AdminUserCreateComponent,
+    AdminUserListComponent,
+    RegisterComponent,
+    LoginComponent,
+    LogoutComponent,
+    DropdownDirective
   ],
   imports: [
     routes,
-    BrowserModule,FormsModule,HttpModule
+    AuthModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+
+
   ],
-  providers: [ImageService],
+  providers: [ImageService, UserService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
